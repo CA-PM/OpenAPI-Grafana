@@ -1,0 +1,55 @@
+<query-editor-row query-ctrl="ctrl" class="openapi-datasource-query-row" has-text-edit-mode="false">
+    <div class="gf-form-inline">
+
+        <div class="gf-form max-width-250">
+            <label class="gf-form-label query-keyword">Query Type:</label>
+            <select class="gf-form-input" ng-model="ctrl.target.queryType" ng-dropdown>
+                <option ng-option value="topn" ng-selected="ctrl.target.queryType == 'topn'">Top N</option>
+                <option ng-option value="data" ng-selected="!ctrl.target.queryType == 'data'">Data</option>
+            </select>
+        </div>
+
+        <!-- Top N -->
+        <div ng-if="ctrl.target.queryType == 'topn'">
+            <div class="gf-form max-width-250">
+                <!-- Metric to query -->
+                <label class="gf-form-label query-keyword">Metric Family:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.metricfamily" spellcheck="false" placeholder="Enter Metric Family"/>
+                <label class="gf-form-label query-keyword">Metric:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.metric" spellcheck="false" placeholder="Enter Metric"/>
+                <label class="gf-form-label query-keyword">Group By:</label><select class="gf-form-input" ng-model="ctrl.target.groupBy" ng-options="f as f for f in ['Device', 'Component']"></select>
+            </div>
+            <div class="gf-form gf-form--grow">
+                <!-- Filter -->
+                <label class="gf-form-label query-keyword">Filter:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.filter" spellcheck="false" placeholder="Enter Filter"/>
+            </div>
+            <div class="gf-form">
+                <!-- Rate data to use. These match in datasource.js -->
+                <label class="gf-form-label query-keyword">Granularity:</label><select class="gf-form-input" ng-model="ctrl.target.rate" ng-options="f as f for f in ['As Polled', 'Hour', 'Day']"></select>
+                <!-- How many of Entity to retrieve -->
+                <label class="gf-form-label query-keyword">Top:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.top" spellcheck="false" placeholder="Entities to return"/>
+            </div>
+        </div>
+
+        <!-- Normal -->
+        <div ng-if="ctrl.target.queryType == 'data'">
+            <div class="gf-form max-width-250">
+                <!-- Main entity -->
+                <label class="gf-form-label query-keyword">Entity:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.entity" spellcheck="false" placeholder="Enter Entity"/>
+                <!-- Metric to query -->
+                <label class="gf-form-label query-keyword">Metric Family:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.metricfamily" spellcheck="false" placeholder="Enter Metric Family"/>
+                <label class="gf-form-label query-keyword">Metric:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.metric" spellcheck="false" placeholder="Enter Metric"/>
+            </div>
+            <div class="gf-form gf-form--grow">
+                <!-- Filter -->
+                <label class="gf-form-label query-keyword">Filter:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.filter" spellcheck="false" placeholder="Enter Filter"/>
+            </div>
+            <div class="gf-form">
+                <!-- Show parent (Device) -->
+                <label class="gf-form-label query-keyword">Show Device:</label><input type="checkbox" class="gf-form-input" ng-model="ctrl.target.showparent">
+                <!-- Rate data to use. These match in datasource.js -->
+                <label class="gf-form-label query-keyword">Granularity:</label><select class="gf-form-input" ng-model="ctrl.target.rate" ng-options="f as f for f in ['As Polled', 'Hour', 'Day']"></select>
+                <!-- How many of Entity to retrieve -->
+                <label class="gf-form-label query-keyword">Top:</label><input type="text" class="gf-form-input" ng-model="ctrl.target.top" spellcheck="false" placeholder="Entities to return"/>
+            </div>
+        </div>
+    </div>
+</query-editor-row>

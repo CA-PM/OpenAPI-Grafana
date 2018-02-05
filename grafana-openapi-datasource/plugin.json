@@ -1,0 +1,33 @@
+{
+  "name": "OpenAPI Datasource",
+  "id": "grafana-openapi-datasource",
+  "type": "datasource",
+
+  "partials": {
+    "config": "partials/config.html"
+  },
+
+  "metrics": true,
+  "annotations": false,
+
+  "info": {
+    "description": "OpenAPI datasource",
+    "author": {
+      "name": "CA Technologies",
+      "url": "https://www.ca.com"
+    },
+    "logos": {
+      "small": "img/CA_gray_logo_45x37.png",
+      "large": "img/CA_gray_logo_45x37.png"
+    },
+    "links": [
+      {"name": "GitHub", "url": "https://github.com/CA-PM"}
+    ],
+    "version": "1.0.0",
+    "updated": "2017-12-11"
+  },
+  "dependencies": {
+    "grafanaVersion": "4.x.x",
+    "plugins": [ ]
+  }
+}
