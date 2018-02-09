@@ -29,3 +29,5 @@ See: http://docs.grafana.org/plugins/developing/development for information on m
 The app is provided as an example and no warranties are provided or made
 * Currently supports one query per view in grafana
 * Currently supports one variable per query in grafana
+
+![Example Dashboard](img/grafana_screenshot.png)
