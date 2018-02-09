@@ -13,6 +13,8 @@ Grafana Datasource with the following abilities
 CA PM 3.5. - This does not use any functionality specific to this version of Performance Center. No configuration changes or additional code is required for Performance Center.
 Grafana v4.6.2 - The data source was developed and tested against this version of Grafana.
 
+![Example Dashboard](img/grafana_screenshot.png)
+
 # Installation
 See: http://docs.grafana.org/plugins/developing/development for information on manually installing a Grafana datasource
 1. Download the master GIT repository on your workstation
@@ -29,5 +31,3 @@ See: http://docs.grafana.org/plugins/developing/development for information on m
 The app is provided as an example and no warranties are provided or made
 * Currently supports one query per view in grafana
 * Currently supports one variable per query in grafana
-
-![Example Dashboard](img/grafana_screenshot.png)
