@@ -21,9 +21,9 @@ See: http://docs.grafana.org/plugins/developing/development for information on m
 4. Navigate to the Datasource administration in Grafana, and select "Add data source"
 5. Select "OpenAPI Datasource" from the Type drop down
 6. Enter the URL of the Performance Center system, i.e. http://pc_system.domain.com:8181
-7. Select the "Basic Auth" checkbox
+7. Select "Proxy", and the "Basic Auth" checkbox
 8. Enter the username and password of a valid Performace Center user.
-7. Click "Save & Test", It should 
+7. Click "Save & Test", It should connect successfully
 
 # Notes
 The app is provided as an example and no warranties are provided or made
